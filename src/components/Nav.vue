@@ -2,7 +2,7 @@
   <div>
     <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center justify-content-between">
-        <h1 class="logo mr-auto brick-font "><a >Isi Piringku</a></h1>
+        <h1 class="logo mr-auto brick-font "> <img src="../assets/logo2.png" alt=""> </h1>
         <nav class="nav-menu d-none d-lg-block clickable ">
           <ul id="right">
             <li @click="toHome"
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     toHome() {
-      console.log(`tohome`)
+      this.$router.push({ name: 'Home' }).catch(_ => {})
     }
   },
   created () {
@@ -229,6 +229,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo img {
+  z-index: 99;
   max-height: 40px;
 }
 

@@ -1,6 +1,8 @@
 <template>
-  <div class="mt-5" >
-    <Form/>
+  <div class="m-5 add-page-container" >
+    <Form
+
+    />
   </div>
 </template>
 

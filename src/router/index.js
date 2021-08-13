@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import QueryPage from '../views/QueryPage.vue'
+import ListPage from '../views/ListPage.vue'
 import AddPage from '../views/AddPage.vue'
 
 Vue.use(VueRouter)
@@ -14,8 +14,8 @@ const routes = [
   },
   {
     path: '/patients',
-    name: 'QueryPage',
-    component: QueryPage
+    name: 'ListPage',
+    component: ListPage
   },
   {
     path: '/patients/add',
