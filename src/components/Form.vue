@@ -57,22 +57,6 @@ export default {
 <style scoped src="./Form.css"></style>
 <style>
 
-.action-button {
-  font: inherit;
-	font-size: 1.25rem;
-	padding: 1em;
-	width: 100%;
-	font-weight: 500;
-	color: #FFF;
-	&:focus {
-    outline: 0;
-	}
-  border-radius: 50px;
-  border: none;
-  font-weight: 500;
-  padding: 7px 17px 7px 17px;
-  margin: 40px 10px 10px -10px !important;
-  background-color: $brand-blue;
-}
+
 
 </style>
