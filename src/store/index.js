@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import instance from '../apis/axios'
+import { instanceSpring, instanceGin } from '../apis/axios'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    patients: []
+    patients: [],
+    isLoading: false
   },
   mutations: {
     SET_PATIENTS (state, payload) {
@@ -15,9 +16,34 @@ export default new Vuex.Store({
   },
   actions: {
     fetchPatients({commit}) {
-      instance.get('/patients')
+      instanceSpring.get('/patients')
       .then( ({data}) => {
-        commit('SET_PATIENTS', data.users)
+        commit('SET_PATIENTS', data)
+      })
+      .catch( err => {
+        console.log(err)
+      })
+    },
+    addPatients(_, payload) {
+      console.log(payload, `<<< ini PY`)
+      instanceGin.post('/patients', {
+        "patient_name" : payload.patientName,
+        "birth_date": payload.birthDate,
+        "phone_number" : payload.phoneNumber
+      })
+      .then( ({data}) => {
+        console.log(data, `<<<`)
+        return Promise.resolve()
+      })
+      .catch( err => {
+        console.log(err)
+      })
+    },
+    deletePatientById( {commit, dispatch}, id) {
+      instanceSpring.delete(`/patients/${id}`)
+      .then( ({data}) => {
+        dispatch("fetchPatients")
+        console.log(data, `<<<`)
       })
       .catch( err => {
         console.log(err)

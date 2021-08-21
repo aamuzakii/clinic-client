@@ -21,6 +21,7 @@ export default {
     this.$store.dispatch("fetchPatients")
   },
 
+
 }
 </script>
 

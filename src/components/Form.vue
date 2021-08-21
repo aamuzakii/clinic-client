@@ -12,7 +12,7 @@
 				<input 
           class="input-field" 
           required
-          name="date" type="text" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'"
+          name="date" type="text"  max='2021-01-01' onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'"
 					v-model="birthDate"
         />
 				<label class="input-label">Birth Date</label>
@@ -50,6 +50,11 @@ export default {
 				phoneNumber: this.phoneNumber
 			}
 			this.$store.dispatch("addPatients", payload)
+			.then ( _=> {
+				this.patientName = "",
+				this.birthDate = "",
+				this.phoneNumber = ""
+			})
 		}
 	}
 }

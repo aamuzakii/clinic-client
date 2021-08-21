@@ -1,9 +1,11 @@
 import axios from 'axios'
 
-const instance = axios.create({
-  baseURL: 'http://localhost:3000',
-  headers: {
-  }
+export const instanceSpring = axios.create({
+  baseURL: 'http://localhost:8080/',
 })
 
-export default instance
+export const instanceGin = axios.create({
+  baseURL: 'http://localhost:3000/',
+})
+
+// export default instance

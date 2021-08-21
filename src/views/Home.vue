@@ -53,16 +53,10 @@ export default {
     this.$emit("fetchHistory")
   },
   methods: {
-    patchStatus(payload){
-      this.$emit("patchStatus", payload)
-    },
     cancelRegister() {
       this.isRegistering = false
     },
-
-
     toListPage() {
-      console.log(`masuk list`)
       this.$router.push({ name: 'ListPage' }).catch(_ => {})
     },
     toAddPage() {
